@@ -1,0 +1,88 @@
+
+body {
+  background-color: white;
+}
+.hidden {
+  display: none;
+}
+
+#clear_log {
+  float: right;
+}
+
+p,
+div {
+  text-align: center;
+}
+
+div {
+  margin-bottom: 16px;
+}
+
+#loggs {
+  height: 400px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+#loggs p {
+  text-align: left;
+  font-size: 80%;
+}
+
+.left {
+  text-align: left;
+}
+
+#tag_num {
+  color: green;
+  font-weight: 600;
+  font-size: 130%;
+}
+
+#video-container {
+  line-height: 0;
+}
+
+#video-container.example-style-1 .scan-region-highlight-svg,
+#video-container.example-style-1 .code-outline-highlight {
+  stroke: #64a2f3 !important;
+}
+
+#video-container.example-style-2 {
+  /*position: relative;*/
+  /* width: max-content; */
+  /* height: max-content; */
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+#video-container.example-style-2 .scan-region-highlight {
+  border-radius: 30px;
+  outline: rgba(0, 0, 0, 0.25) solid 50vmax;
+}
+#video-container.example-style-2 .scan-region-highlight-svg {
+  display: none;
+}
+#video-container.example-style-2 .code-outline-highlight {
+  stroke: rgba(255, 255, 255, 0.5) !important;
+  stroke-width: 15 !important;
+  stroke-dasharray: none !important;
+}
+
+#flash-toggle {
+  display: none;
+}
+
+video {
+  height: 300px;
+  width: 300px;
+}
+
+/*hr {*/
+/*    margin-top: 32px;*/
+/*}*/
+input[type="file"] {
+  display: block;
+  margin-bottom: 16px;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TSCI HES 2022 QR-CODE SCANNER</title>
+    <!-- un comment this to use cdn -- preferably for now -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/input.css" />
+    <!-- <link rel="stylesheet" href="css/styley.css"> -->
+  </head>
+  <body class="bg-white">
+    <main class="w-full bg-neutral-600 max-h-[50vh] py-6">
+      <div class="container max-w-lg m-auto px-6">
+        <div
+          id="qr-container"
+          class="bg-white shadow-md my-4 p-4 rounded-lg flex flex-col gap-4 max-h-[100vh] h-auto"
+        >
+          <div class="logo w-full flex flex-col items-center">
+            <img src="img/logo.png" alt="" srcset="" class="w-48 mx-auto" />
+            <p class="text-2xl mb-8 text-[#525252]" style="margin-top: -70px">
+              QRcode Scanner
+            </p>
+          </div>
+          <div id="video-container" class="flex-1">
+            <video
+              id="qr-video"
+              class="h-full w-full border-4 border-[#cf9c2e] rounded-xl"
+            ></video>
+          </div>
+          <div class="button-container flex justify-around py-4">
+            <button
+              id="start_btn"
+              class="rounded-lg bg-[#cf9c2e] w-40 h-12 capitalize text-white font-semibold mr-3"
+            >
+              start
+            </button>
+            <button
+              id="stop_btn"
+              class="border-2 border-[#cf9c2e] rounded-lg w-40 h-12 capitalize text-[#000] font-semibold"
+            >
+              stop
+            </button>
+          </div>
+        </div>
+
+        <!-- ======HIDDEN CLASS STUFF========= -->
+        <div class="hidden">
+          <label>
+            Highlight Style
+            <select id="scan-region-highlight-style-select">
+              <option value="default-style">Default style</option>
+              <option value="example-style-1">Example custom style 1</option>
+              <option value="example-style-2">Example custom style 2</option>
+            </select>
+          </label>
+          <label>
+            <input id="show-scan-region" type="checkbox" />
+            Show scan region canvas
+          </label>
+        </div>
+        <div class="hidden">
+          <select id="inversion-mode-select">
+            <option value="original">
+              Scan original (dark QR code on bright background)
+            </option>
+          </select>
+          <br />
+        </div>
+        <div class="hidden">
+          <b>Preferred camera:</b>
+          <select id="cam-list">
+            <option value="environment" selected>
+              Environment Facing (default)
+            </option>
+            <option value="user">User Facing</option>
+          </select>
+        </div>
+        <div class="hidden">
+          <b>Camera has flash: </b>
+          <span id="cam-has-flash"></span>
+          <div>
+            <button id="flash-toggle">
+              📸 Flash: <span id="flash-state">off</span>
+            </button>
+          </div>
+        </div>
+        <div class="hidden">
+          <br />
+          <b>Detected QR code: </b>
+          <span id="cam-qr-result"></span>
+          <br />
+        </div>
+        <!-- ======HIDDEN CLASS STUFF========= -->
+
+        <!-- Optional image upload -->
+        <!-- <div
+          class="upload-container w-[70%] mx-auto my-2 border-2 border-dashed p-5 flex items-center justify-center"
+        >
+          <input type="file" id="file_upload" />
+          <label for="file_upload" >Drag and drop file</label> 
+        </div> -->
+        <!-- Optional image upload -->
+        <!-- <br /> -->
+        <!-- <button class="upload-btn">Submit</button> -->
+
+        <div class="log-container w-full h-auto">
+          <div class="">
+            <div class="flex  items-center justify-center">
+              <button
+                id="clear_log"
+                class="p-3 my-3 underline underline-offset-4 font-semibold"
+              >
+                Clear log
+              </button>
+              <button
+                id="download_csv"
+                class="p-3 underline underline-offset-4 font-semibold"
+              >
+                download csv
+              </button>
+              <button
+                id="clear_record"
+                class="p-3 underline underline-offset-4 font-semibold"
+              >
+                delete record
+              </button>
+            </div>
+          </div>
+          <!-- <hr /> -->
+          <p class="left">Scan Logs</p>
+          <div id="logges">
+            <div id="logs" class="w-full py-2 whitespace-normal"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="js/js-1.js"></script>
+  <script src="js/js-2.js"></script>
+  <script src="js/app.js" type="module"></script>
+  <!-- <script src="js/module.js" type="module"></script> -->
+</html>

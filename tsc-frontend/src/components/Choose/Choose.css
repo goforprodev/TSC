@@ -1,0 +1,18 @@
+.choose__container {
+  /* border: 1px solid black; */
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eee;
+  color: #0d0d0d;
+  width: auto;
+  height: 50px;
+  padding: 0 1rem;
+}
+button {
+  appearance: none;
+  border: none;
+  color: #0d0d0d;
+  cursor: pointer;
+}
