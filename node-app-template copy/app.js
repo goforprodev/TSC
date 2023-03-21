@@ -105,7 +105,7 @@ let scanCache = new SessionCache();
 let meeting = new Meeting();
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", { title: "TSCI HES 2022 QR-CODE SCANNER" });
 });
 
 app.get("/demo", (req, res) => {
@@ -123,13 +123,11 @@ app.post("/some", (req, res) => {
       return res.status(200).send({ data: "Insertion Successful" });
   }
 });
-
+app.get("/create", (req, res) => {
+  res.render("create", { title: "Create meeting" });
+});
 app.post("/api/create", (req, res) => {
   parseAndAddData(req.body, res);
-});
-
-app.get("/api/render-meeting", (req, res) => {
-  const hash = req.query.hash;
 });
 
 app.post("/api/load-meeting", (req, res) => {
@@ -146,6 +144,11 @@ app.post("/api/get-registry", (req, res) => {
 
 app.get("/download", (req, res) => {
   return res.status(200).send({ data: scanCache.get() });
+});
+
+app.get("/render-meeting", (req, res) => {
+  const hash = req.query.hash;
+  return res.render("meeting", { title: "Register for meeting" });
 });
 
 app.get("/deletedb", (req, res) => {

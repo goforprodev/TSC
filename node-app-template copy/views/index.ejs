@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TSCI HES 2022 QR-CODE SCANNER</title>
-    <!-- un comment this to use cdn -- preferably for now -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/input.css" />
-    <!-- <link rel="stylesheet" href="css/styley.css"> -->
-  </head>
+<%- include('partials/top.ejs')%>
   <body class="bg-white">
     <main class="w-full bg-neutral-600 max-h-[50vh] py-6">
       <div class="container max-w-lg m-auto px-6">
@@ -136,9 +125,4 @@
         </div>
       </div>
     </main>
-  </body>
-  <script src="js/js-1.js"></script>
-  <script src="js/js-2.js"></script>
-  <script src="js/app.js" type="module"></script>
-  <!-- <script src="js/module.js" type="module"></script> -->
-</html>
+<%- include('partials/bottom.ejs')%>

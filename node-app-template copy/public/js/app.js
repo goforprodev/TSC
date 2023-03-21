@@ -249,11 +249,4 @@ document.getElementById("clear_record").addEventListener("click", (e) => {
   });
 }, false);
 
-// document.querySelector("#file_upload").addEventListener("change", () => {
-//   QrScanner.scanImage(filesUI.files[0])
-//     .then((result) => {
-//       parseResult(result);
-//       // showLog(result);
-//     })
-//     .catch((error) => console.log(error || "No QR code found."));
-// });
+
